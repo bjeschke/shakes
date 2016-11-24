@@ -105,28 +105,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F5FCFF',
-    paddingLeft:10
+    paddingLeft:10,
+    paddingRight:10,
   },
   imageContainer:{
-    alignItems:'center',
     marginTop:40,
-    width:300,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    flex: 1,
+    justifyContent:'space-between',
   },
   category:{
-    width:130,
-    alignSelf: 'flex-end',
-    textAlign:'right',
     marginTop:31,
     fontWeight:'bold',
     color:'#555555'
   },
   logo:{
-    alignSelf: 'flex-start',
     marginRight:10,
   },
   timeView:{
-    width:300,
     backgroundColor:'#B2BB1C',
     padding:5,
     alignItems:'center',
@@ -142,7 +138,6 @@ const styles = StyleSheet.create({
     color:'#555555',
   },
   recipeTable:{
-    width:300,
     marginBottom:20,
     marginTop:10,
   },
@@ -159,26 +154,22 @@ const styles = StyleSheet.create({
   },
   tr:{
     flexDirection: 'row',
-     flex: 1,
-     alignItems: 'stretch',
+    flex: 1,
+    justifyContent:'space-between'
   },
   td1:{
-    width:180,
-    alignSelf: 'flex-start',
     paddingLeft:10,
     marginBottom:3,
-    paddingTop:3,
-    paddingBottom:3
+    paddingTop:5,
+    paddingBottom:3,
   },
   td2:{
-    width:50,
-    alignSelf: 'flex-end',
+    paddingRight:10,
     marginBottom:3,
-    paddingTop:3,
-    paddingBottom:3
+    paddingTop:5,
+    paddingBottom:3,
   },
   descView:{
-    width:300,
     marginBottom:20
   },
   desc:{
@@ -188,20 +179,19 @@ const styles = StyleSheet.create({
   nutritionBox:{
     backgroundColor:'#B2BB1C',
     padding:10,
-    width:300,
   },
   nutritionLine:{
-    flexDirection: 'row'
+    flexDirection: 'row',
+    flex: 1,
+    justifyContent:'space-between'
   },
   nutritionName:{
-    width:200,
     color:'#ffffff',
-    marginBottom:3
+    marginBottom:6
   },
   nutritionValue:{
-    width:80,
     color:'#ffffff',
-    marginBottom:3
+    marginBottom:6
   }
 });
 
