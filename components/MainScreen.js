@@ -1,24 +1,18 @@
 /**
  * Flavio Simonettis Aufbaushakes
  * author: Benjamin Jeschke
- * date: 15.11.2016
+ * date: 02.07.2017
  * class: Screen of Main menu
  */
 
 import React, { Component, PropTypes } from 'react';
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  Image,
-} from 'react-native';
-
+import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
 import strings from '../strings/default'
 
  class MainScreen extends Component {
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <View style={styles.imageContainer}>
@@ -28,38 +22,30 @@ import strings from '../strings/default'
           />
         </View>
         <View style={styles.buttonView}>
-          <TouchableOpacity style={styles.button}  onPress={() => this._navigate('softgainer')}>
+          <TouchableOpacity style={styles.button}
+            onPress={() => navigate('List', { name: 'softgainer' })}>
             <Text style={styles.buttonText}>{strings.main.softgainer}</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.buttonView}>
-          <TouchableOpacity style={styles.button} onPress={() => this._navigate('hardgainer')}>
+          <TouchableOpacity style={styles.button} onPress={() => navigate('List', { name: 'hardgainer' })}>
             <Text style={styles.buttonText}>{strings.main.hardgainer}</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.buttonView}>
-          <TouchableOpacity style={styles.button} onPress={() => this._navigate('vitaminshakes')}>
+          <TouchableOpacity style={styles.button} onPress={() => navigate('List', { name: 'vitaminshakes' })}>
             <Text style={styles.buttonText}>{strings.main.vitaminshakes}</Text>
           </TouchableOpacity>
         </View>
       </View>
     );
   }
-
-  _navigate(property){
-    this.props.navigator.push({
-      name: 'ListScreen',
-      passProps: {
-        name: property
-      }
-    })
-  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#F5FCFF'
   },
   imageContainer:{
     alignItems:'center',

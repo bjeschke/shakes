@@ -1,49 +1,29 @@
 /**
  * Flavio Simonettis Aufbaushakes
  * author: Benjamin Jeschke
- * date: 15.11.2016
+ * date: 02.07.2017
  * class: Screen for detail Information about the shakes.
  */
 
 import React, { Component, PropTypes } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  ScrollView,
-} from 'react-native';
+import {StyleSheet, Text, View, Image, ScrollView,} from 'react-native';
 
 import strings from '../strings/default'
-import categories from './categories'
+import softgainer from '../strings/softgainer';
+import hardgainer from '../strings/hardgainer';
+import vitaminshakes from '../strings/vitaminshakes';
 
  class DetailScreen extends Component {
    constructor(props){
      super(props)
-
-     categories.forEach((category) => {
-       if (category.name == this.props.category)
-       {
-         this.component = category.component;
-       }
-     });
-
-     this.component.forEach((component) => {
-       if (component.name == this.props.item)
-       {
-         this.item = component;
-       }
-     });
    }
 
   render() {
+    var categories = {softgainer,hardgainer,vitaminshakes};
+    const { params } = this.props.navigation.state;
 
-    var getBackgroundColor = function(i){
-      if(i % 2 == 0)
-        return {backgroundColor:'#ffffff'}
-      else
-       return {backgroundColor:'#cccccc'}
-     };
+    categories[params.category].map((component) => {if (component.name == params.item){this.item = component;}});
+    var getBackgroundColor = function(i){return (i % 2 == 0) ? {backgroundColor:'#ffffff'} : {backgroundColor:'#cccccc'};};
 
     var recipeTable =[];
       this.item.recipe.forEach(function(recipe, i){

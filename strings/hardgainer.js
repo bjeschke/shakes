@@ -418,34 +418,7 @@ const hardgainer = [
           value:'1 Prise'
         }
       ]
-    },
-    {
-      name:'',
-      desc:'',
-      time:'',
-      cal: '',
-      protein:'',
-      carb:'',
-      fat:'',
-      recipe:[
-        {
-          name:'',
-          value:''
-        },
-        {
-          name:'',
-          value:''
-        },
-        {
-          name:'',
-          value:''
-        },
-        {
-          name:'',
-          value:''
-        }
-      ]
-    },
+    }
 ]
 
 export default hardgainer
